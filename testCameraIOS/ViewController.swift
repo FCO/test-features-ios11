@@ -9,22 +9,24 @@
 import UIKit
 
 import AVFoundation
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     let captureSession = AVCaptureSession()
+    var count = 0
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var btn: UIButton!
-    var devices: [AVCaptureDevice]?
-    var previewLayer: AVCaptureVideoPreviewLayer?
+    private let device = AVCaptureDevice.DiscoverySession.init(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices[0]
+    private var previewLayer: AVCaptureVideoPreviewLayer?
+    private let sessionQueue    = DispatchQueue(label: "session queue")
     
     @IBAction func toggle(_ sender: UIButton) {
         if !sender.isSelected {
             sender.isSelected = true
             captureSession.sessionPreset = AVCaptureSession.Preset.high
-            self.beginSession(devices![0])
+            self.beginSession(device)
             lbl.text = "??? 🤔 ???"
         } else {
             sender.isSelected = false
-            self.stopSession(devices![0])
+            self.stopSession(device)
             lbl.text = ""
         }
         self.toFront()
@@ -38,19 +40,35 @@ class ViewController: UIViewController {
         let err : NSError? = nil
         btn.setTitle("start", for: .normal)
         btn.setTitle("stop", for: .selected)
-        devices = AVCaptureDevice.devices()
+        
+        
         do {
-            try captureSession.addInput(AVCaptureDeviceInput(device: devices![0]))
+            try captureSession.addInput(AVCaptureDeviceInput(device: device))
         } catch {
             print("error: \(String(describing: err?.localizedDescription) )")
         }
+        
+        let testOutput = AVCaptureVideoDataOutput()
+        testOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer"))
+        captureSession.addOutput(testOutput)
     }
     
     func beginSession(_ captureDevice: AVCaptureDevice) {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer!.frame = self.view.bounds
-        captureSession.startRunning()
+        sessionQueue.async { [unowned self] in
+            self.captureSession.startRunning()
+        }
         self.view.layer.addSublayer(previewLayer!)
+    }
+    
+//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        DispatchQueue.main.async { [unowned self] in
+            print("AQUI")
+            self.count += 1
+            self.lbl.text  = "bla \(self.count)"
+        }
     }
     
     func stopSession(_ captureDevice: AVCaptureDevice) {
