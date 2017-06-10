@@ -47,6 +47,7 @@
 		ED95BF2C1EEA79790027DE8F /* testCameraIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testCameraIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED95BF301EEA79790027DE8F /* testCameraIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCameraIOSUITests.swift; sourceTree = "<group>"; };
 		ED95BF321EEA79790027DE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED95BF3E1EEBBD3B0027DE8F /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../Downloads/Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		ED95BF0F1EEA79780027DE8F /* testCameraIOS */ = {
 			isa = PBXGroup;
 			children = (
+				ED95BF3E1EEBBD3B0027DE8F /* Inceptionv3.mlmodel */,
 				ED95BF101EEA79780027DE8F /* AppDelegate.swift */,
 				ED95BF121EEA79780027DE8F /* ViewController.swift */,
 				ED95BF141EEA79780027DE8F /* Main.storyboard */,
@@ -419,7 +421,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 39ZAWRHCYW;
 				INFOPLIST_FILE = testCameraIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.testCameraIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,7 +436,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 39ZAWRHCYW;
 				INFOPLIST_FILE = testCameraIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.testCameraIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +524,7 @@
 				ED95BF371EEA79790027DE8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED95BF381EEA79790027DE8F /* Build configuration list for PBXNativeTarget "testCameraIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +533,7 @@
 				ED95BF3A1EEA79790027DE8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED95BF3B1EEA79790027DE8F /* Build configuration list for PBXNativeTarget "testCameraIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +542,7 @@
 				ED95BF3D1EEA79790027DE8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
