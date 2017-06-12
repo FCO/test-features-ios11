@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     let captureSession = AVCaptureSession()
     var count = 0
+    let model = Inceptionv3()
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var btn: UIButton!
     private let device = AVCaptureDevice.DiscoverySession.init(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices[0]
@@ -65,9 +66,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 //    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
     func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         DispatchQueue.main.async { [unowned self] in
-            print("AQUI")
-            self.count += 1
-            self.lbl.text  = "bla \(self.count)"
+            do {
+                let response = try self.model.prediction(image: sampleBuffer as! CVPixelBuffer)
+                self.lbl.text = response.classLabel
+            } catch {
+                self.lbl.text = "??? 🤔 ???"
+            }
         }
     }
     

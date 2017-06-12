@@ -14,6 +14,7 @@
 		ED95BF1B1EEA79780027DE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF191EEA79780027DE8F /* LaunchScreen.storyboard */; };
 		ED95BF261EEA79790027DE8F /* testCameraIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF251EEA79790027DE8F /* testCameraIOSTests.swift */; };
 		ED95BF311EEA79790027DE8F /* testCameraIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF301EEA79790027DE8F /* testCameraIOSUITests.swift */; };
+		EDB2C4D31EEF2F8900F20CBC /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EDB2C4D21EEF2F8900F20CBC /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,8 @@
 		ED95BF2C1EEA79790027DE8F /* testCameraIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testCameraIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED95BF301EEA79790027DE8F /* testCameraIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCameraIOSUITests.swift; sourceTree = "<group>"; };
 		ED95BF321EEA79790027DE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED95BF3E1EEBBD3B0027DE8F /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../Downloads/Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		ED95BF441EEC4A8A0027DE8F /* testCameraIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = testCameraIOS.entitlements; sourceTree = "<group>"; };
+		EDB2C4D21EEF2F8900F20CBC /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../.Trash/Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				ED95BF241EEA79790027DE8F /* testCameraIOSTests */,
 				ED95BF2F1EEA79790027DE8F /* testCameraIOSUITests */,
 				ED95BF0E1EEA79780027DE8F /* Products */,
+				ED95BF411EEC4A8A0027DE8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +101,8 @@
 		ED95BF0F1EEA79780027DE8F /* testCameraIOS */ = {
 			isa = PBXGroup;
 			children = (
-				ED95BF3E1EEBBD3B0027DE8F /* Inceptionv3.mlmodel */,
+				ED95BF441EEC4A8A0027DE8F /* testCameraIOS.entitlements */,
+				EDB2C4D21EEF2F8900F20CBC /* Inceptionv3.mlmodel */,
 				ED95BF101EEA79780027DE8F /* AppDelegate.swift */,
 				ED95BF121EEA79780027DE8F /* ViewController.swift */,
 				ED95BF141EEA79780027DE8F /* Main.storyboard */,
@@ -125,6 +129,13 @@
 				ED95BF321EEA79790027DE8F /* Info.plist */,
 			);
 			path = testCameraIOSUITests;
+			sourceTree = "<group>";
+		};
+		ED95BF411EEC4A8A0027DE8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,11 @@
 				TargetAttributes = {
 					ED95BF0C1EEA79780027DE8F = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					ED95BF201EEA79790027DE8F = {
 						CreatedOnToolsVersion = 9.0;
@@ -259,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED95BF131EEA79780027DE8F /* ViewController.swift in Sources */,
+				EDB2C4D31EEF2F8900F20CBC /* Inceptionv3.mlmodel in Sources */,
 				ED95BF111EEA79780027DE8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 39ZAWRHCYW;
 				INFOPLIST_FILE = testCameraIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.testCameraIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,7 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 39ZAWRHCYW;
 				INFOPLIST_FILE = testCameraIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.testCameraIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
