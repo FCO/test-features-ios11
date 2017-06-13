@@ -14,7 +14,7 @@
 		ED95BF1B1EEA79780027DE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF191EEA79780027DE8F /* LaunchScreen.storyboard */; };
 		ED95BF261EEA79790027DE8F /* testCameraIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF251EEA79790027DE8F /* testCameraIOSTests.swift */; };
 		ED95BF311EEA79790027DE8F /* testCameraIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF301EEA79790027DE8F /* testCameraIOSUITests.swift */; };
-		EDB2C4D31EEF2F8900F20CBC /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EDB2C4D21EEF2F8900F20CBC /* Inceptionv3.mlmodel */; };
+		EDEE83B31EEF86FE0028C3A5 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED1E64DE1EEF865700E8E199 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED1E64DE1EEF865700E8E199 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		ED95BF0D1EEA79780027DE8F /* testCameraIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testCameraIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED95BF101EEA79780027DE8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED95BF121EEA79780027DE8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		ED95BF301EEA79790027DE8F /* testCameraIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCameraIOSUITests.swift; sourceTree = "<group>"; };
 		ED95BF321EEA79790027DE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED95BF441EEC4A8A0027DE8F /* testCameraIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = testCameraIOS.entitlements; sourceTree = "<group>"; };
-		EDB2C4D21EEF2F8900F20CBC /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../.Trash/Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				ED95BF441EEC4A8A0027DE8F /* testCameraIOS.entitlements */,
-				EDB2C4D21EEF2F8900F20CBC /* Inceptionv3.mlmodel */,
+				ED1E64DE1EEF865700E8E199 /* Inceptionv3.mlmodel */,
 				ED95BF101EEA79780027DE8F /* AppDelegate.swift */,
 				ED95BF121EEA79780027DE8F /* ViewController.swift */,
 				ED95BF141EEA79780027DE8F /* Main.storyboard */,
@@ -275,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED95BF131EEA79780027DE8F /* ViewController.swift in Sources */,
-				EDB2C4D31EEF2F8900F20CBC /* Inceptionv3.mlmodel in Sources */,
+				EDEE83B31EEF86FE0028C3A5 /* Inceptionv3.mlmodel in Sources */,
 				ED95BF111EEA79780027DE8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

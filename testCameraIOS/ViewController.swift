@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     let captureSession = AVCaptureSession()
     var count = 0
+    let perFrames = 10
     let model = Inceptionv3()
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var btn: UIButton!
@@ -63,15 +64,21 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.view.layer.addSublayer(previewLayer!)
     }
     
-//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
     func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        DispatchQueue.main.async { [unowned self] in
+        if count >= perFrames {
+            var response = ""
             do {
-                let response = try self.model.prediction(image: sampleBuffer as! CVPixelBuffer)
-                self.lbl.text = response.classLabel
+                let res = try self.model.prediction(image: sampleBuffer as! CVPixelBuffer)
+                response = res.classLabel
             } catch {
-                self.lbl.text = "??? 🤔 ???"
+                response = "??? 🤔 ???"
             }
+            DispatchQueue.main.async { [unowned self] in
+                self.lbl.text = response
+            }
+            count = 0
+        } else {
+            count += 1
         }
     }
     
